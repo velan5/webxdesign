@@ -1,0 +1,261 @@
+/* =======================================
+   CSS Variables & Global Styles
+======================================= */
+:root {
+    /* Global colors */
+    --color-primary: #007BFF;
+    --color-accent: #ff4081;
+    --color-light: #f0f0f0;
+    --color-dark: #333;
+    --bg-default: #ffffff;
+    --transition-time: 0.3s;
+    --font-base: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Reset & Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center; /* Centers all direct children horizontally */
+    font-family: var(--font-base);
+    background-color: var(--bg-default);
+    color: var(--color-dark);
+    line-height: 1.6;
+    padding: 1rem;
+    transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
+  }
+  
+  /* =======================================
+     Header, Main & Footer Centering
+  ======================================= */
+  header, main, footer {
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as needed */
+    text-align: center;
+  }
+  
+  /* =======================================
+     Header & Footer Styling
+  ======================================= */
+  header, footer {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .era-selector {
+    margin-top: 1rem;
+  }
+  .era-selector label,
+  .era-selector select {
+    font-size: 1rem;
+  }
+  
+  /* =======================================
+     Main Layout & Era Sections
+  ======================================= */
+  main {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 1rem;
+  }
+  
+  /* Hide sections by default; show active one */
+  .era-section {
+    display: none;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: fadeIn var(--transition-time) ease-out;
+  }
+  .era-section.active {
+    display: block;
+  }
+  
+  /* Global text & heading styles */
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* =======================================
+     Era Specific Styles
+  ======================================= */
+  
+  /* ---------- 1990s Style ---------- */
+  body.era-90s {
+    background-color: #fff8e1;
+    color: #000;
+    font-family: "Comic Sans MS", "Arial", cursive;
+  }
+  body.era-90s h1,
+  body.era-90s h2 {
+    color: #ff00ff;
+    text-shadow: 1px 1px 0 #fff;
+  }
+  body.era-90s .blinking-text {
+    animation: blink 1s step-start infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  body.era-90s marquee {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: red;
+    font-size: 1.2rem;
+    background-color: yellow;
+    border: 2px dashed blue;
+    border-radius: 4px;
+  }
+  
+  /* ---------- Early 2000s Style ---------- */
+  body.era-2000s {
+    background: linear-gradient(to bottom, #cfcfcf, #fefefe);
+    color: #333;
+    font-family: "Tahoma", sans-serif;
+  }
+  body.era-2000s h1,
+  body.era-2000s h2 {
+    text-shadow: 1px 1px 2px #888;
+  }
+  .glossy-button {
+    background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+    border: 1px solid #888;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: background var(--transition-time);
+  }
+  .glossy-button:hover {
+    background: linear-gradient(to bottom, #fff 0%, #bbb 100%);
+  }
+  .ipod-container {
+    width: 200px;
+    height: 300px;
+    background-color: #aaa;
+    border-radius: 30px;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    position: relative;
+  }
+  .ipod-screen {
+    background-color: #222;
+    color: #0f0;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  /* ---------- 2010s Modern Minimalism ---------- */
+  body.era-2010s {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: "Open Sans", sans-serif;
+  }
+  .hero-card {
+    background: #fff;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    transition: transform var(--transition-time);
+  }
+  .hero-card:hover {
+    transform: translateY(-5px);
+  }
+  .flat-button {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background var(--transition-time);
+  }
+  .flat-button:hover {
+    background: #0056b3;
+  }
+  
+  /* ---------- 2020s Ultra-Modern ---------- */
+  body.era-2020s {
+    background: #e0e0e0;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+  }
+  .glass-card {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    border-radius: 16px;
+    transition: box-shadow var(--transition-time);
+  }
+  .glass-card:hover {
+    box-shadow: 0 6px 40px rgba(0,0,0,0.15);
+  }
+  
+  /* =======================================
+     Image Styling
+  ======================================= */
+  img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform var(--transition-time);
+  }
+  img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* =======================================
+     Animations & Effects
+  ======================================= */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* =======================================
+     Responsive Design
+  ======================================= */
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    main {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
